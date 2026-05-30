@@ -38,26 +38,42 @@ Thumbs.db
 # Jupyter
 .ipynb_checkpoints/
 
-# Project data & results (keep under .gitkeep)
+# Project data
 data/raw/*
 data/processed/*
 data/calibration/*
 !data/**/.gitkeep
+
 experiments/*
 !experiments/.gitkeep
+!experiments/default/
 
-# Model weights & large media
+experiments/default/*
+!experiments/default/.gitkeep
+!experiments/default/cam0_calibration.npz
+!experiments/default/cam1_calibration.npz
+!experiments/default/cam2_calibration.npz
+!experiments/default/cam3_calibration.npz
+!experiments/default/offsets_event_anchored.json
+!experiments/default/F_cam0_cam1_synced_undist.npz
+!experiments/default/F_cam0_cam2_synced_undist.npz
+!experiments/default/F_cam0_cam3_synced_undist.npz
+!experiments/default/keypoints/
+!experiments/default/keypoint_samples/
+!experiments/default/epipolar_vis/
+!experiments/default/recovery/
+
+!experiments/default/best_view.mp4
+
 *.pt
 *.pth
 *.onnx
 *.engine
-*.mp4
 *.avi
 *.mov
 *.mkv
 
-# Calibration outputs
-*.npz
+# Misc
 *.pkl
 
 # Env / secrets
