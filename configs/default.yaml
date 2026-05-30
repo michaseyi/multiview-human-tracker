@@ -19,30 +19,24 @@ cameras:
 
 calibration:
   puzzleboard:
-    # Detected board geometry: 11 x 16 pieces -> 12 x 17 corner intersections.
-    # Each puzzle piece is 7 cm (per assignment), so corner-to-corner spacing is 0.07 m.
     rows: 12
     cols: 17
     square_size_m: 0.07
     marker_bits: 4
     discard_edge_layers: 1  # drop the outer ring; paper curls at edges so those
-                            # corners break Zhang's planar assumption. Ablation
-                            # showed this drops RMS by 60-70% on all 4 cameras.
-  captures_dir: data/calibration  # contains per-camera subfolders cam0/, cam1/, ...
+                            # corners break Zhang's planar assumption.   
+  captures_dir: data/calibration  
   output_path: experiments/default/calibration.npz
   min_views_per_point: 2
-  # Frame-harvesting settings for Day 1.
-  min_corners_per_frame: 100   # after dropping the outer ring ~50 corners are lost,
-                                # so threshold is on remaining INNER corners
-  target_frames_per_camera: 80   # harvest with headroom so post-outlier-rejection >= 50
-  frame_stride: 50               # spread sampling across ~2 minutes so the board
-                                 # passes through many genuinely different orientations
-                                 # (Zhang's method needs linearly independent constraints)
+  min_corners_per_frame: 100   
+  target_frames_per_camera: 80   
+  frame_stride: 50               
+                                 
 
 detection:
-  model: yolov8s-pose.pt    # COCO-17 keypoint model (s = small, ~7 ms/frame on CUDA)
-  conf_threshold: 0.35      # discard person detections below this score
-  device: auto              # auto | cuda | mps | cpu
-  imgsz: 1280               # YOLO downscales the frame to this; outputs are mapped back to full res
-  stride: 1                 # run on every Nth frame (1 = all frames)
+  model: yolov8s-pose.pt    
+  conf_threshold: 0.35     
+  device: auto             
+  imgsz: 1280              
+  stride: 1                
   output_dir: experiments/default/keypoints
