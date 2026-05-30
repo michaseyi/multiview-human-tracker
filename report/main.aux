@@ -1,0 +1,107 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Data Setup}{1}{section.2}\protected@file@percent }
+\newlabel{sec:data}{{2}{1}{Data Setup}{section.2}{}}
+\citation{zhang2000}
+\citation{brown1971}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Monocular Calibration}{2}{section.3}\protected@file@percent }
+\newlabel{sec:calibration}{{3}{2}{Monocular Calibration}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Method}{2}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Frame harvesting and outlier rejection}{2}{subsection.3.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces RMS reprojection error before and after discarding the outer ring of corners. Same harvest parameters; only the corner filter differs.}}{2}{table.1}\protected@file@percent }
+\newlabel{tab:edge-ablation}{{1}{2}{RMS reprojection error before and after discarding the outer ring of corners. Same harvest parameters; only the corner filter differs}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Per-camera intrinsics with the inner-only configuration. All four cameras achieve sub-pixel RMS, $f_y / f_x$ within $0.5\%$ of one (square pixels), and principal points within roughly $30$~px of the geometric centre of the $2560 \times 1440$ frame (i.e.\ $(1280, 720)$ in pixel coordinates).}}{2}{table.2}\protected@file@percent }
+\newlabel{tab:intrinsics}{{2}{2}{Per-camera intrinsics with the inner-only configuration. All four cameras achieve sub-pixel RMS, $f_y / f_x$ within $0.5\%$ of one (square pixels), and principal points within roughly $30$~px of the geometric centre of the $2560 \times 1440$ frame (i.e.\ $(1280, 720)$ in pixel coordinates)}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Edge-corner ablation: paper curl}{2}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:edge-ablation}{{3.3}{2}{Edge-corner ablation: paper curl}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Results}{2}{subsection.3.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Per-camera 5-coefficient Brown--Conrady distortion coefficients. All four cameras show mild and similar barrel distortion ($k_1 \approx -0.42$), consistent with their being the same make and model.}}{3}{table.3}\protected@file@percent }
+\newlabel{tab:distortion}{{3}{3}{Per-camera 5-coefficient Brown--Conrady distortion coefficients. All four cameras show mild and similar barrel distortion ($k_1 \approx -0.42$), consistent with their being the same make and model}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Example calibration frame from \texttt  {cam0}. The actor holds the Puzzleboard while moving through the scene; the detector returns $\sim 200$ corner observations per such frame, of which the outer ring ($\sim 50$ corners) is dropped before feeding the points into \texttt  {calibrateCamera}.}}{3}{figure.1}\protected@file@percent }
+\newlabel{fig:calib-sample}{{1}{3}{Example calibration frame from \cam {0}. The actor holds the Puzzleboard while moving through the scene; the detector returns $\sim 200$ corner observations per such frame, of which the outer ring ($\sim 50$ corners) is dropped before feeding the points into \texttt {calibrateCamera}}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Temporal Synchronisation}{3}{section.4}\protected@file@percent }
+\newlabel{sec:sync}{{4}{3}{Temporal Synchronisation}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}NCC baseline}{3}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces NCC curves of \texttt  {cam1}, \texttt  {cam2}, and \texttt  {cam3} against \texttt  {cam0}. Each curve peaks at $\tau = 0$ and falls to baseline by $\tau = \pm 5$ frames. The peak heights of 0.55--0.63 reflect the fact that no single constant shift aligns the start and end of the recording simultaneously; this is the constant-$\tau $ model failing on linearly drifting data rather than a benign amplitude mismatch.}}{3}{figure.2}\protected@file@percent }
+\newlabel{fig:sync}{{2}{3}{NCC curves of \cam {1}, \cam {2}, and \cam {3} against \cam {0}. Each curve peaks at $\tau = 0$ and falls to baseline by $\tau = \pm 5$ frames. The peak heights of 0.55--0.63 reflect the fact that no single constant shift aligns the start and end of the recording simultaneously; this is the constant-$\tau $ model failing on linearly drifting data rather than a benign amplitude mismatch}{figure.2}{}}
+\newlabel{eq:ncc}{{1}{3}{NCC baseline}{equation.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Event-anchored affine model}{3}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Frame indices of two manually-identified board-impact events across the four cameras. Both events are sub-frame in their natural duration (the board makes contact with the surface in a single sampled instant), so the readings are precise to within $\pm 1$ frame.}}{4}{table.4}\protected@file@percent }
+\newlabel{tab:events}{{4}{4}{Frame indices of two manually-identified board-impact events across the four cameras. Both events are sub-frame in their natural duration (the board makes contact with the surface in a single sampled instant), so the readings are precise to within $\pm 1$ frame}{table.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Two-event affine sync fit. $\beta $ is the per-frame clock ratio, and ``implied $f$'' converts back to an absolute frame rate by $\beta \cdot f_0$. The fitted rates differ from the metadata values in the third decimal, with \texttt  {cam3} the most extreme: 24.17~fps empirically versus 24.30~fps in metadata.}}{4}{table.5}\protected@file@percent }
+\newlabel{tab:sync-fit}{{5}{4}{Two-event affine sync fit. $\beta $ is the per-frame clock ratio, and ``implied $f$'' converts back to an absolute frame rate by $\beta \cdot f_0$. The fitted rates differ from the metadata values in the third decimal, with \cam {3} the most extreme: 24.17~fps empirically versus 24.30~fps in metadata}{table.5}{}}
+\newlabel{eq:affine-sync}{{2}{4}{Event-anchored affine model}{equation.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Predicted matched support-camera frame and offset $M_c(N) - N$ at six representative \texttt  {cam0} frames. The offset is small near both events (the fit is exact at the events themselves) and grows toward the ends of the recording. \texttt  {cam1} stays close to \texttt  {cam0} throughout; \texttt  {cam3} drifts by 142 frames (5.8~s) by frame 10\,000.}}{4}{table.6}\protected@file@percent }
+\newlabel{tab:sync-drift}{{6}{4}{Predicted matched support-camera frame and offset $M_c(N) - N$ at six representative \cam {0} frames. The offset is small near both events (the fit is exact at the events themselves) and grows toward the ends of the recording. \cam {1} stays close to \cam {0} throughout; \cam {3} drifts by 142 frames (5.8~s) by frame 10\,000}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Per-camera detection statistics. ``Coverage'' is the fraction of source frames with at least one detection. ``Low-conf kp'' is the fraction of individual keypoint observations with $\text  {conf} < 0.35$ (the value that the downstream pipeline treats as missing).}}{4}{table.7}\protected@file@percent }
+\newlabel{tab:yolo-stats}{{7}{4}{Per-camera detection statistics. ``Coverage'' is the fraction of source frames with at least one detection. ``Low-conf kp'' is the fraction of individual keypoint observations with $\text {conf} < 0.35$ (the value that the downstream pipeline treats as missing)}{table.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}2D Keypoint Detection}{4}{section.5}\protected@file@percent }
+\newlabel{sec:keypoints}{{5}{4}{2D Keypoint Detection}{section.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example detection from \texttt  {cam2} with the 17-point COCO skeleton drawn on the actor. Bones are colour-coded; the per-person YOLO score on this frame is $0.93$. One such sample per camera is saved under \texttt  {experiments/default/keypoint\_samples/}.}}{5}{figure.3}\protected@file@percent }
+\newlabel{fig:kp-sample}{{3}{5}{Example detection from \cam {2} with the 17-point COCO skeleton drawn on the actor. Bones are colour-coded; the per-person YOLO score on this frame is $0.93$. One such sample per camera is saved under \texttt {experiments/default/keypoint\_samples/}}{figure.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Best-View Rendering}{5}{section.6}\protected@file@percent }
+\newlabel{sec:best-view}{{6}{5}{Best-View Rendering}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Scoring and selection}{5}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Composite layout}{5}{subsection.6.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces One frame of the best-view composite. The $2 \times 2$ grid (left) shows all four cameras with the actor's skeleton overlaid; the expanded panel on the right is the chosen best view, here \texttt  {cam0} with $n = 32$ keypoints visible and mean confidence $0.92$.}}{5}{figure.4}\protected@file@percent }
+\newlabel{fig:best-view}{{4}{5}{One frame of the best-view composite. The $2 \times 2$ grid (left) shows all four cameras with the actor's skeleton overlaid; the expanded panel on the right is the chosen best view, here \cam {0} with $n = 32$ keypoints visible and mean confidence $0.92$}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Fundamental Matrix Estimation}{5}{section.7}\protected@file@percent }
+\newlabel{sec:fundamental}{{7}{5}{Fundamental Matrix Estimation}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Background}{5}{subsection.7.1}\protected@file@percent }
+\newlabel{eq:epipolar}{{3}{5}{Background}{equation.3}{}}
+\newlabel{eq:F-from-E}{{4}{5}{Background}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Cross-camera correspondences}{5}{subsection.7.2}\protected@file@percent }
+\citation{hartley1997,hartley2003}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}Direct via OpenCV}{6}{subsection.7.3}\protected@file@percent }
+\newlabel{sec:F-direct}{{7.3}{6}{Direct via OpenCV}{subsection.7.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}Via the essential matrix}{6}{subsection.7.4}\protected@file@percent }
+\newlabel{sec:F-essential}{{7.4}{6}{Via the essential matrix}{subsection.7.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}Manual normalised eight-point algorithm}{6}{subsection.7.5}\protected@file@percent }
+\newlabel{sec:F-8pt}{{7.5}{6}{Manual normalised eight-point algorithm}{subsection.7.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Hartley pre-conditioning.}{6}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Linear system.}{6}{section*.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Median symmetric epipolar distance (SED) on the RANSAC-inlier set for each method on each tested camera pair, with correspondences harvested at sync-corrected support-camera frames and undistorted before the linear fit. All three estimators agree sub-pixel on \texttt  {cam0}--\texttt  {cam1} and \texttt  {cam0}--\texttt  {cam2}; \texttt  {cam0}--\texttt  {cam3} sits at 1.31--1.45~px, an order of magnitude tighter than the 10.68~px we obtained without the two harvest-time corrections.}}{6}{table.8}\protected@file@percent }
+\newlabel{tab:F-results}{{8}{6}{Median symmetric epipolar distance (SED) on the RANSAC-inlier set for each method on each tested camera pair, with correspondences harvested at sync-corrected support-camera frames and undistorted before the linear fit. All three estimators agree sub-pixel on \cam {0}--\cam {1} and \cam {0}--\cam {2}; \cam {0}--\cam {3} sits at 1.31--1.45~px, an order of magnitude tighter than the 10.68~px we obtained without the two harvest-time corrections}{table.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{SVD.}{6}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Rank-2 enforcement.}{6}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Denormalisation.}{6}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Verification.}{6}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}Results and cross-check}{6}{subsection.7.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Epipolar-line validation on frame $0$ between \texttt  {cam0} (left) and \texttt  {cam2} (right). Rows from top to bottom show the direct, via-$E$, and 8-point fundamental matrices respectively. The lines pass cleanly through the corresponding Puzzleboard corners for all three methods, with median symmetric epipolar distances of $0.7$, $1.4$, and $0.3$ pixels.}}{7}{figure.5}\protected@file@percent }
+\newlabel{fig:epi-board}{{5}{7}{Epipolar-line validation on frame $0$ between \cam {0} (left) and \cam {2} (right). Rows from top to bottom show the direct, via-$E$, and 8-point fundamental matrices respectively. The lines pass cleanly through the corresponding Puzzleboard corners for all three methods, with median symmetric epipolar distances of $0.7$, $1.4$, and $0.3$ pixels}{figure.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Epipolar-Line Visualization and Validation}{7}{section.8}\protected@file@percent }
+\newlabel{sec:epipolar-vis}{{8}{7}{Epipolar-Line Visualization and Validation}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Method}{7}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Discussion: which method works best}{7}{subsection.8.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Epipolar-line validation on frame $5968$ between \texttt  {cam0} (left) and \texttt  {cam2} (right), using actor keypoint correspondences. The lines no longer pass through their matched points for any of the three methods (SED $\sim 500$~px on all three rows). This is not an $F$ failure (the same $F$ matrices produced sub-pixel results on the Puzzleboard test), but a correspondence and timing failure, discussed in Section~\ref {sec:discussion}.}}{7}{figure.6}\protected@file@percent }
+\newlabel{fig:epi-actor}{{6}{7}{Epipolar-line validation on frame $5968$ between \cam {0} (left) and \cam {2} (right), using actor keypoint correspondences. The lines no longer pass through their matched points for any of the three methods (SED $\sim 500$~px on all three rows). This is not an $F$ failure (the same $F$ matrices produced sub-pixel results on the Puzzleboard test), but a correspondence and timing failure, discussed in Section~\ref {sec:discussion}}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Missing-Keypoint Recovery}{7}{section.9}\protected@file@percent }
+\newlabel{sec:recovery}{{9}{7}{Missing-Keypoint Recovery}{section.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}Method}{7}{subsection.9.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Median recovery error on Puzzleboard corners with \texttt  {cam0} as primary, under the canonical pipeline (undistorted-space $F$, sync- corrected support frames). The 3-line LS reaches sub-pixel at a static-board frame, validating that $F$ itself is geometrically correct on its design distribution; the 2-line cross product is fragile because intersection error scales as $1 / \sin \theta $ in the angle between lines.}}{8}{table.9}\protected@file@percent }
+\newlabel{tab:recovery-board}{{9}{8}{Median recovery error on Puzzleboard corners with \cam {0} as primary, under the canonical pipeline (undistorted-space $F$, sync- corrected support frames). The 3-line LS reaches sub-pixel at a static-board frame, validating that $F$ itself is geometrically correct on its design distribution; the 2-line cross product is fragile because intersection error scales as $1 / \sin \theta $ in the angle between lines}{table.9}{}}
+\newlabel{eq:epi-recovery}{{5}{8}{Method}{equation.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Validation on Puzzleboard corners}{8}{subsection.9.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Validation on actor keypoints}{8}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Distortion absorbed into $F$.}{8}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Inter-camera temporal drift.}{8}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Rolling-shutter shear during motion.}{8}{section*.10}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces End-to-end progression of actor-keypoint recovery error, median over 12 evenly-spaced test frames with \texttt  {cam0} as primary. Each row adds one correction to the row above; the supports column lists the configuration that minimises median error under that pipeline.}}{9}{table.10}\protected@file@percent }
+\newlabel{tab:e1-progression}{{10}{9}{End-to-end progression of actor-keypoint recovery error, median over 12 evenly-spaced test frames with \cam {0} as primary. Each row adds one correction to the row above; the supports column lists the configuration that minimises median error under that pipeline}{table.10}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Missing-keypoint recovery on Puzzleboard corners, \texttt  {cam0} as primary with \texttt  {cam1}+\texttt  {cam2}+\texttt  {cam3} as supports. For each tested corner we draw the three epipolar lines from the supporting cameras (thin coloured lines), the recovered location (filled disc), and the ground-truth location of that corner in \texttt  {cam0} (open ring of the same colour). The filled discs and the rings sit at essentially the same pixels.}}{9}{figure.7}\protected@file@percent }
+\newlabel{fig:rec-board}{{7}{9}{Missing-keypoint recovery on Puzzleboard corners, \cam {0} as primary with \cam {1}+\cam {2}+\cam {3} as supports. For each tested corner we draw the three epipolar lines from the supporting cameras (thin coloured lines), the recovered location (filled disc), and the ground-truth location of that corner in \cam {0} (open ring of the same colour). The filled discs and the rings sit at essentially the same pixels}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.4}What happens when the lines do not intersect cleanly}{9}{subsection.9.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Discussion and Limitations}{9}{section.10}\protected@file@percent }
+\newlabel{sec:discussion}{{10}{9}{Discussion and Limitations}{section.10}{}}
+\bibcite{zhang2000}{{1}{}{{}}{{}}}
+\bibcite{brown1971}{{2}{}{{}}{{}}}
+\bibcite{hartley1997}{{3}{}{{}}{{}}}
+\bibcite{hartley2003}{{4}{}{{}}{{}}}
+\providecommand\NAT@force@numbers{}\NAT@force@numbers
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{10}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{11}{10}{Conclusion}{section.11}{}}
+\gdef \@abspage@last{10}

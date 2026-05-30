@@ -1,0 +1,66 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiview-tracker"
+version = "0.1.0"
+description = "Multi-View Human Tracking with Puzzleboard Calibration"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Michael Adewole" }]
+dependencies = [
+    "numpy>=1.24",
+    "opencv-contrib-python>=4.8",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "puzzle_board @ git+https://github.com/PStelldinger/PuzzleBoard.git",
+]
+
+[project.optional-dependencies]
+detect = [
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "ultralytics>=8.1",
+]
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP", "C4", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["N802"]
+"notebooks/*" = ["E402", "F401"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_ignores = true
+warn_return_any = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --strict-markers"
+markers = [
+    "slow: marks tests as slow",
+    "gpu: marks tests that require a GPU",
+]
+
+[dependency-groups]
+dev = [
+    "imageio-ffmpeg>=0.6.0",
+]

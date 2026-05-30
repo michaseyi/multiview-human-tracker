@@ -1,0 +1,11 @@
+First lift of board
+cam 0 330
+cam 1 341
+cam 2 335
+cam 3 336
+
+Another board lift moment
+cam 0 7714
+cam 1 7712
+cam 2 7670
+cam 3 7607

@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Internal working notes
+REPORT_NOTES.md
+
+# Editors / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Project data & results (keep under .gitkeep)
+data/raw/*
+data/processed/*
+data/calibration/*
+!data/**/.gitkeep
+experiments/*
+!experiments/.gitkeep
+
+# Model weights & large media
+*.pt
+*.pth
+*.onnx
+*.engine
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Calibration outputs
+*.npz
+*.pkl
+
+# Env / secrets
+.env
+.env.local
+
