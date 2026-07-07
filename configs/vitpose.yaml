@@ -1,0 +1,45 @@
+experiment:
+  name: default
+  output_dir: experiments/default
+  seed: 42
+
+cameras:
+  - id: cam0
+    source: data/raw/0_Camera.mp4
+    fps: 24.55
+  - id: cam1
+    source: data/raw/1_Camera.mp4
+    fps: 24.55
+  - id: cam2
+    source: data/raw/2_Camera.mp4
+    fps: 24.55
+  - id: cam3
+    source: data/raw/3_Camera.mp4
+    fps: 24.55
+
+calibration:
+  puzzleboard:
+    rows: 12
+    cols: 17
+    square_size_m: 0.07
+    marker_bits: 4
+    discard_edge_layers: 1
+  captures_dir: data/calibration
+  output_path: experiments/default/calibration.npz
+  min_views_per_point: 2
+  min_corners_per_frame: 100
+  target_frames_per_camera: 80
+  frame_stride: 50
+
+# Only detection differs from default.yaml: keypoints come from ViTPose++ Huge
+# (top-down, YOLO person boxes) and are read from a separate directory so the
+# YOLO baseline in experiments/default/keypoints/ stays intact for comparison.
+# Calibration, sync (offsets_event_anchored.json), and all F_*.npz are shared
+# and unchanged — they do not depend on the pose detector.
+detection:
+  model: usyd-community/vitpose-plus-huge
+  conf_threshold: 0.35
+  device: auto
+  imgsz: 1280
+  stride: 1
+  output_dir: experiments/default/keypoints_vitpose

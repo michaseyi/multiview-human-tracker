@@ -25,6 +25,14 @@ detect = [
     "torchvision>=0.16",
     "ultralytics>=8.1",
 ]
+pose = [
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "ultralytics>=8.1",
+    "transformers>=4.47",
+    "accelerate>=0.30",
+    "pillow>=10",
+]
 dev = [
     "pytest>=7.4",
     "ruff>=0.3",
@@ -32,6 +40,17 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+# Driver on this box is 535.x (CUDA 12.2), too old for the default cu130 wheels.
+# Pin torch/torchvision to the CUDA 12.1 index (max 2.5.1) so they run on 535.
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
 
 [tool.ruff]
 line-length = 100
